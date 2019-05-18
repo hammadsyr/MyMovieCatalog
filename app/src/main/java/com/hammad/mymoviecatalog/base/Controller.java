@@ -1,5 +1,4 @@
-package com.hammad.mymoviecatalog.api;
-
+package com.hammad.mymoviecatalog.base;
 
 import android.app.Application;
 import android.text.TextUtils;
@@ -9,6 +8,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.hammad.mymoviecatalog.BuildConfig;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import timber.log.Timber;
 
 public class Controller extends Application {
@@ -26,6 +27,13 @@ public class Controller extends Application {
             Timber.plant(new Timber.DebugTree());
         }
         instance = this;
+
+        Realm.init(this);
+        RealmConfiguration config = new RealmConfiguration
+                .Builder()
+                .deleteRealmIfMigrationNeeded()
+                .name("mymoviecatalog.realm").build();
+        Realm.setDefaultConfiguration(config);
     }
 
     public static synchronized Controller getInstance() {

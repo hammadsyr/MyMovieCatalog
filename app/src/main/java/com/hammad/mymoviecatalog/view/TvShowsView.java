@@ -1,5 +1,5 @@
 package com.hammad.mymoviecatalog.view;
 
-public interface MovieView extends MovieCallback {
+public interface TvShowsView extends TvShowsCallback {
     void onBegin();
 }

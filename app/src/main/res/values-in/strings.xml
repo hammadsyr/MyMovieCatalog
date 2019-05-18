@@ -4,111 +4,20 @@
     <string name="release_date">Tanggal Rilis</string>
     <string name="user_score">Nilai</string>
     <string name="overview">Ringkasan</string>
-    <string name="actor">Aktor</string>
-    <string name="review">Ulasan</string>
     <string name="movies">Film</string>
     <string name="tv_shows">Tayangan TV</string>
     <string name="change_language">Ganti Bahasa</string>
     <string name="click">Anda klik %s</string>
     <string name="api_language">api_key=b65165a9259616403abdd4ec0b62c83d&amp;language=en-US</string>
-    <string-array name="movies">
-        <item>Aquaman</item>
-        <item>A Star is Born</item>
-        <item>Avengers : Infinity War</item>
-        <item>Bird Box</item>
-        <item>Bohemian Rhapsody</item>
-    </string-array>
-    <string-array name="image">
-        <item>https://image.tmdb.org/t/p/w300_and_h450_bestv2/5Kg76ldv7VxeX9YlcQXiowHgdX6.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/rGfGfgL2pEPCfhIvqHXieXFn7gp.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg</item>
-    </string-array>
-    <string-array name="release_date">
-        <item>Desember 7, 2018</item>
-        <item>Oktober 3, 2018</item>
-        <item>April 25, 2018</item>
-        <item>Desember 13, 2018</item>
-        <item>Oktober 24, 2018</item>
-    </string-array>
-    <string-array name="overview">
-        <item>Once home to the most advanced civilization on Earth, the city of Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people — and then the surface world. Standing in his way is Aquaman, Orms half-human, half-Atlantean brother and true heir to the throne. With help from royal counselor Vulko, Aquaman must retrieve the legendary Trident of Atlan and embrace his destiny as protector of the deep.</item>
-        <item>Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even as Allys career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
-        <item>As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.</item>
-        <item>When a mysterious force decimates the world’s population, only one thing is certain: if you see it, you take your life. Facing the unknown, Malorie finds love, hope and a new beginning only for it to unravel. Now she must flee with her two children down a treacherous river to the one place left that may offer sanctuary. But to survive, theyll have to undertake the perilous two-day journey blindfolded.</item>
-        <item>Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock n roll band Queen in 1970. Hit songs become instant classics. When Mercurys increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.</item>
-    </string-array>
-    <string-array name="user_score">
-        <item>68</item>
-        <item>74</item>
-        <item>83</item>
-        <item>70</item>
-        <item>82</item>
-    </string-array>
-    <string-array name="actor">
-        <item>Jason Momoa, Amber Heard, Nicole Kidman, Willem Dafoe, Patrick Wilson</item>
-        <item>Bradley Cooper, Lady Gaga, Sam Elliott, Andrew Dice Clay, Dave Chappelle</item>
-        <item>Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Josh Brolin</item>
-        <item>Sandra Bullock, Trevante Rhodes, John Malkovich, Sarah Paulson, Jacki Weaver</item>
-        <item>Rami Malek, Gwilym Lee, Ben Hardy, Joseph Mazzello, Lucy Boynton</item>
-    </string-array>
-    <string-array name="review">
-        <item>I just came back home from watching Aquaman on the IMAX theater in Balexert in Geneva and thought that I should write something up while it’s still fresh in my mind. Something that happens all too rarely. I have to say that, overall, I had quite a blast watching this description. It is indeed a good superhero and special effects extravaganza. In addition it is quite beautiful. A lot of the underwater scenes are very pleasing on the eye indeed. I am quite happy that I managed to drag my ass over to a theater and watch it on a IMAX screen. Some of the hype around it is perhaps a bit too much though…</item>
-        <item>Very interesting. As soon as I saw the trailer, I wanted to see it. I work in the professional cv services, and through the big traffic there is no time for going to the cinema, so I will wait for the film to appear in good quality on the Internet. But the trailer is exciting. Everything I love: romance, love and music!</item>
-        <item>It is a bold undertaking, to readjust what is expected of the MCU/Avengers formula, and there are moments when the sheer scale and momentum match the narrative ambition…</item>
-        <item>Kind of a The Happening meets A Quiet Place, but better than the latter and way better than the former. Maybe I didnt get eeeeeeverything I wanted out of Bird Box but Im still on board. I know that I opened this up by saying the description is very much like two other descriptions, but what I liked most about is honestly that its unlike 99.99% of the horror genre, and that little variation was just what I needed today.</item>
-        <item>If Bohemian Rhapsody is so great, why was the best part of it Tom Hollander saying a single word? Dont get me wrong, Rami Malek deserves props for the role, that much is true (less perhaps than hes been getting, but still, props). But beyond that, Bohemian Rhapsody is bland, choppy, arguably even offensive. There might be some value in one of those sing-along type deals if you can get enough Queen fans together for one, but Ill never know, because I have no interest in re-watching this.</item>
-    </string-array>
-    <string-array name="tv_shows">
-        <item>Fairy Tail</item>
-        <item>Doom Patrol</item>
-        <item>Dragon Ball</item>
-        <item>Arrow</item>
-        <item>The Flash</item>
-    </string-array>
-    <string-array name="tv_shows_image">
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/58GKcwFV3lpVOGzybeMrrNOjHpz.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/nVN7Dt0Xr78gnJepRsRLaLYklbY.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/3wx3EAMtqnbSLhGG8NrqXriCUIQ.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/mo0FP1GxOFZT4UDde7RFDz5APXF.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/fki3kBlwJzFp8QohL43g9ReV455.jpg</item>
-    </string-array>
-    <string-array name="tv_shows_release_date">
-        <item>October 12, 2009</item>
-        <item>February 15, 2019</item>
-        <item>February 26, 1986</item>
-        <item>October 10, 2012</item>
-        <item>October 7, 2014</item>
-    </string-array>
-    <string-array name="tv_shows_overview">
-        <item>Lucy is a 17-year-old girl, who wants to be a full-fledged mage. One day when visiting Harujion Town, she meets Natsu, a young man who gets sick easily by any type of transportation. But Natsu isnt just any ordinary kid, hes a member of one of the worlds most infamous mage guilds: Fairy Tail.</item>
-        <item>The Doom Patrol’s members each suffered horrible accidents that gave them superhuman abilities — but also left them scarred and disfigured. Traumatized and downtrodden, the team found purpose through The Chief, who brought them together to investigate the weirdest phenomena in existence — and to protect Earth from what they find.</item>
-        <item>Long ago in the mountains, a fighting master known as Gohan discovered a strange boy whom he named Goku. Gohan raised him and trained Goku in martial arts until he died. The young and very strong boy was on his own, but easily managed. Then one day, Goku met a teenage girl named Bulma, whose search for the dragon balls brought her to Gokus home. Together, they set off to find all seven dragon balls in an adventure that would change Gokus life forever. See how Goku met his life long friends Bulma, Yamcha, Krillin, Master Roshi and more. And see his adventures as a boy, all leading up to Dragonball Z and later Dragonball GT.</item>
-        <item>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.</item>
-        <item>After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only "meta-human" who was created in the wake of the accelerator explosion — and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it wont be long before the world learns what Barry Allen has become…The Flash.</item>
-    </string-array>
-    <string-array name="tv_shows_user_score">
-        <item>68</item>
-        <item>56</item>
-        <item>75</item>
-        <item>59</item>
-        <item>67</item>
-    </string-array>
-    <string-array name="tv_shows_actor">
-        <item>Natsu Dragneel, Lucy Heartfilia, Happy, Gray Fullbuster, Ezra Scarlet</item>
-        <item>Timothy Dalton, April Bowlby, Diane Guerrero, Matt Bomer, Brendan Fraser</item>
-        <item>Son Goku, Krillin, Bulma, Yamcha, Oolong</item>
-        <item>Stephen Amell, Emily Bett Rickards, David Ramsey, Katie Cassidy, Echo Kellum</item>
-        <item>Grant Gustin, Candice Patton, Carlos Valdes, Danielle Panabaker, Tom Cavanagh</item>
-    </string-array>
-    <string-array name="tv_shows_review">
-        <item>No Review</item>
-        <item>No Review</item>
-        <item>No Review</item>
-        <item>No Review</item>
-        <item>No Review</item>
-    </string-array>
-
+    <string name="favorite">Kesukaan</string>
+    <string name="added_to_favorite">Ditambahkan ke kesukaan</string>
+    <string name="removed_from_favorite">Dihapus dari kesukaan</string>
+    <string name="appwidget_text">Film Favorit</string>
+    <string name="empty_text">Tidak Ada Data</string>
+    <string name="search">Cari film…</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_name">News</string>
+    <string name="msg_subscribed">Subscribed to news topic</string>
+    <string name="daily_reminder_deactivated">Daily reminder deactivated</string>
 
 </resources>

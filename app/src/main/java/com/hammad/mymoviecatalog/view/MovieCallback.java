@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public interface MovieCallback {
     void onFailed(String message);
-    void onSuccess(ArrayList<MovieResults> movieResults);
+    void onMovieSuccess(ArrayList<MovieResults> movieResults);
 }

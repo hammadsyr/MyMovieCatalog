@@ -1,4 +1,4 @@
-package com.hammad.mymoviecatalog.adapter;
+package com.hammad.mymoviecatalog.favorite.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,11 +13,11 @@ import com.hammad.mymoviecatalog.R;
 import com.hammad.mymoviecatalog.model.MovieResults;
 import com.hammad.mymoviecatalog.model.TvShowsResults;
 
-class MovieViewHolder<T> extends RecyclerView.ViewHolder {
+class FavoriteViewHolder<T> extends RecyclerView.ViewHolder {
     private ImageView ivMovie;
     private TextView tvMovie, tvReleaseDate, tvUserScore;
 
-    MovieViewHolder(@NonNull View itemView) {
+    FavoriteViewHolder(@NonNull View itemView) {
         super(itemView);
 
         ivMovie = itemView.findViewById(R.id.iv_movie);
@@ -26,7 +26,7 @@ class MovieViewHolder<T> extends RecyclerView.ViewHolder {
         tvUserScore = itemView.findViewById(R.id.tv_user_score);
     }
 
-    void bindItem(Context context, final T description, final MovieAdapter.Click click) {
+    void bindItem(Context context, final T description, final FavoriteAdapter.Click click) {
         String imageSize = "w92";
         if (description instanceof MovieResults) {
             Glide.with(context).load(BuildConfig.BASE_IMAGE_URL + imageSize + ((MovieResults) description).posterPath).into(ivMovie);
@@ -51,6 +51,5 @@ class MovieViewHolder<T> extends RecyclerView.ViewHolder {
                 }
             });
         }
-
     }
 }

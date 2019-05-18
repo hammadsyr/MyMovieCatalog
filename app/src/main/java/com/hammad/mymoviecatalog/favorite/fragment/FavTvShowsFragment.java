@@ -1,12 +1,10 @@
-package com.hammad.mymoviecatalog.fragment;
+package com.hammad.mymoviecatalog.favorite.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
@@ -17,57 +15,38 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.hammad.mymoviecatalog.BuildConfig;
 import com.hammad.mymoviecatalog.DetailActivity;
 import com.hammad.mymoviecatalog.R;
 import com.hammad.mymoviecatalog.adapter.MovieAdapter;
+import com.hammad.mymoviecatalog.favorite.adapter.FavoriteAdapter;
 import com.hammad.mymoviecatalog.model.MovieResults;
 import com.hammad.mymoviecatalog.model.TvShowsResults;
-import com.hammad.mymoviecatalog.presenter.Presenter;
-import com.hammad.mymoviecatalog.view.TvShowsView;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
-public class TvShowsFragment extends Fragment implements TvShowsView {
-
-    @BindView(R.id.rv_tv_shows)
+public class FavTvShowsFragment extends Fragment {
+    @BindView(R.id.rv_fav_tv_shows)
     RecyclerView recyclerView;
-    @BindView(R.id.swipe_tv_shows)
-    SwipeRefreshLayout swipeRefreshLayout;
 
-    private MovieAdapter<TvShowsResults> tvShowsAdapter;
-    private Presenter tvShowsPresenter;
+    Realm realm;
+    RealmResults<TvShowsResults> tvShowsResults;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tvShowsPresenter = new Presenter(getContext());
+        realm = Realm.getDefaultInstance();
         this.setHasOptionsMenu(true);
     }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tv_shows, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_fav_tv, container, false);
         ButterKnife.bind(this, view);
-        swipeRefreshLayout.setColorSchemeResources(
-                android.R.color.holo_red_light,
-                android.R.color.holo_blue_light,
-                android.R.color.holo_green_light,
-                android.R.color.holo_orange_light
-        );
-
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                tvShowsPresenter.getTvShows(BuildConfig.BASE_URL + "tv?", TvShowsFragment.this);
-            }
-        });
-        tvShowsPresenter.getTvShows(BuildConfig.BASE_URL + "tv?", this);
+        recyclerView.setAdapter(setRecyclerView());
         return view;
     }
 
@@ -82,7 +61,9 @@ public class TvShowsFragment extends Fragment implements TvShowsView {
             @Override
             public boolean onQueryTextSubmit(String text) {
                 if (!text.equals("")) {
-                    tvShowsAdapter = new MovieAdapter<>(getContext(), tvShowsAdapter.filter(text), new MovieAdapter.Click<TvShowsResults>() {
+                    recyclerView.setHasFixedSize(true);
+                    tvShowsResults = realm.where(TvShowsResults.class).contains("name", text).findAll();
+                    FavoriteAdapter<TvShowsResults> favoriteAdapter = new FavoriteAdapter<>(getContext(), tvShowsResults, new FavoriteAdapter.Click<TvShowsResults>() {
                         @Override
                         public void onClick(TvShowsResults description) {
                             Intent i = new Intent(getContext(), DetailActivity.class);
@@ -93,16 +74,18 @@ public class TvShowsFragment extends Fragment implements TvShowsView {
                             startActivity(i);
                         }
                     });
-                    recyclerView.setAdapter(tvShowsAdapter);
+                    recyclerView.setAdapter(favoriteAdapter);
                 } else
-                    tvShowsPresenter.getTvShows(BuildConfig.BASE_URL + "tv?", TvShowsFragment.this);
+                    setRecyclerView();
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String text) {
                 if (!text.equals("")) {
-                    tvShowsAdapter = new MovieAdapter<>(getContext(), tvShowsAdapter.filter(text), new MovieAdapter.Click<TvShowsResults>() {
+                    recyclerView.setHasFixedSize(true);
+                    tvShowsResults = realm.where(TvShowsResults.class).contains("name", text).findAll();
+                    FavoriteAdapter<TvShowsResults> favoriteAdapter = new FavoriteAdapter<>(getContext(), tvShowsResults, new FavoriteAdapter.Click<TvShowsResults>() {
                         @Override
                         public void onClick(TvShowsResults description) {
                             Intent i = new Intent(getContext(), DetailActivity.class);
@@ -113,29 +96,24 @@ public class TvShowsFragment extends Fragment implements TvShowsView {
                             startActivity(i);
                         }
                     });
-                    recyclerView.setAdapter(tvShowsAdapter);
+                    recyclerView.setAdapter(favoriteAdapter);
                 } else
-                    tvShowsPresenter.getTvShows(BuildConfig.BASE_URL + "tv?", TvShowsFragment.this);
+                    setRecyclerView();
                 return true;
             }
         });
     }
 
     @Override
-    public void onBegin() {
-        swipeRefreshLayout.setRefreshing(true);
+    public void onResume() {
+        super.onResume();
+        recyclerView.setAdapter(setRecyclerView());
     }
 
-    @Override
-    public void onFailed(String message) {
-        swipeRefreshLayout.setRefreshing(false);
-        Snackbar.make(recyclerView, message, Snackbar.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onTvShowsSuccess(ArrayList<TvShowsResults> tvShowsResults) {
-        swipeRefreshLayout.setRefreshing(false);
-        tvShowsAdapter = new MovieAdapter<>(getContext(), tvShowsResults, new MovieAdapter.Click<TvShowsResults>() {
+    private FavoriteAdapter<TvShowsResults> setRecyclerView() {
+        recyclerView.setHasFixedSize(true);
+        tvShowsResults = realm.where(TvShowsResults.class).findAll();
+        FavoriteAdapter<TvShowsResults> favoriteAdapter = new FavoriteAdapter<>(getContext(), tvShowsResults, new FavoriteAdapter.Click<TvShowsResults>() {
             @Override
             public void onClick(TvShowsResults description) {
                 Intent i = new Intent(getContext(), DetailActivity.class);
@@ -146,6 +124,6 @@ public class TvShowsFragment extends Fragment implements TvShowsView {
                 startActivity(i);
             }
         });
-        recyclerView.setAdapter(tvShowsAdapter);
+        return favoriteAdapter;
     }
 }
